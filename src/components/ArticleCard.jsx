@@ -3,6 +3,7 @@ import { ThemeContext } from './themeContext';
 function ArticleCard({img,title,content,publishDate,src,url}){
 
     const [more,setMore] = useState(false);
+    const [classN,setClass]= useState("animate-pulse");
     const {theme} = useContext(ThemeContext);
     const toggleMore = ()=>{
         setMore(!more);
@@ -12,7 +13,7 @@ function ArticleCard({img,title,content,publishDate,src,url}){
     }
     return (
         <div className="border-2 rounded border-[#d3e08b] flex flex-col gap-2 my-2 p-2 sm:w-2/3 m-auto">
-            <img className="block rounded bg-[url(/bg-img.png)] min-w-[300px] min-h-[250px] bg-contain bg-no-repeat bg-center" src={img} alt=""/>
+            <img onLoad={()=>{setClass=("")}} className={`block rounded bg-[url(/bg-img.png)] min-w-[200px] min-h-[150px] bg-contain bg-no-repeat bg-center classN`} src={img} alt=""/>
             <h1 className="text-2xl mx-5">{title}</h1>
             <div>
                 <p className={`mx-5 text-ellipsis ${more?"":"line-clamp-2"}`}>{content}</p>
