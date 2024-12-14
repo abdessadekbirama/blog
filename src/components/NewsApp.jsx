@@ -25,7 +25,7 @@ const NewsApp = () => {
     // طلب الأخبار من الخادم الذي يعمل مع News API
     axios.get(`https://node-server2.vercel.app/news?category=${category}&country=us`)
       .then((response) => {
-        setNews(response.data.articles);
+        setNews(response.data.articles.filter(article=>article.urlToImage));
         setLoading(false);
       })
       .catch((err) => {
