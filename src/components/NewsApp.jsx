@@ -48,7 +48,7 @@ const NewsApp = () => {
           </div>:
           <div>
             <div className='my-5 flex flex-col items-center gap-3'>
-              <h1 className='text-2xl text-center'>welcome to <span className='font-bold font-[cursive]'>Bloggy</span></h1>
+              <h1 className='text-2xl text-center'>stay updated with the latest news and headlines from around the world.</h1>
               <select onChange={changeCategory} className={`border-2 border-blue-500 p-2 rounded w-1/2 ${theme==="dark"?"bg-[#46016288]":""}`}>
                 {categories.map((o,i)=>(
                   <option className={`transition-all ${theme==="dark"?"bg-[#340057] text-white":""}`} key={i} value={o.value}>{o.label}</option>
